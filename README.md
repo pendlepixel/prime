@@ -8,7 +8,7 @@ I am trying to fix the default now.
 
 ### How to compiled
 #### Environment
-linux operating system
+linux
 
 #### Steps
 1. enter to ./prime/src
