@@ -1,5 +1,5 @@
 # prime
-code of an available operating system
+code of an available compiler with Java language.
 
 ### Announcement
 the code now can be compiled, but can not get the right result when you run the example on the dragon book.
