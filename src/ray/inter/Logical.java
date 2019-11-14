@@ -3,11 +3,18 @@ package ray.inter;
 import ray.lexer.Token;
 import ray.symbols.Type;
 
+/**
+ * DESCRIPTION: And,Or,Not,Rel的父类，为他们提供一些常见功能。
+*/
 public class Logical extends Expr {
     
+    //两个字段分别对应于一个逻辑运算符的运算分量，
     public Expr expr1;
     public Expr expr2;
 
+    /**
+    * DESCRIPTION: 构造函数，构造出一个语法树的节点，其运算符是tok,运算分量是a和b,通过check保证a和b都是布尔类型
+    */
     Logical(Token tok, Expr x1, Expr x2) 
     {
         super(tok, null);  //开始时设置类型为空

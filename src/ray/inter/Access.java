@@ -4,6 +4,9 @@ import ray.lexer.Tag;
 import ray.lexer.Word;
 import ray.symbols.Type;
  
+/**
+ * DESCRIPTION: 表示数组访问的类
+*/
 public class Access extends Op {
 
     public Id array;

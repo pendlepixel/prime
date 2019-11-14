@@ -2,6 +2,9 @@ package ray.inter;
 
 import ray.lexer.Lexer;
 
+/**
+ * DESCRIPTION: 抽象语法树的实现类
+*/
 public class Node {
     
     int lexline = 0;
@@ -16,6 +19,7 @@ public class Node {
         throw new Error("near line " + lexline + ": " + s); 
     }
 
+    //labels以及newlabel()和emitlabel()用来生成三地址代码
     static int labels = 0;
     
     public int newlabel() 

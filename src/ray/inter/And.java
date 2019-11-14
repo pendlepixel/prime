@@ -2,6 +2,9 @@ package ray.inter;
 
 import ray.lexer.Token;
 
+/**
+ * DESCRIPTION: 逻辑运算AND的相关类
+*/
 public class And extends Logical {
     
     public And(Token tok, Expr x1, Expr x2) 

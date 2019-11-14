@@ -1,5 +1,8 @@
 package ray.inter;
 
+/**
+ * DESCRIPTION: Node的两个子类之一，对应于语句节点
+*/
 public class Stmt extends Node {
     
     public Stmt() 
