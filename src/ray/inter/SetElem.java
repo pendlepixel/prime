@@ -3,6 +3,9 @@ package ray.inter;
 import ray.symbols.Array;
 import ray.symbols.Type;
 
+/**
+ * DESCRIPTION: 实现了对数组元素进行赋值的相关类
+*/
 public class SetElem extends Stmt {
 
     public Id array; 

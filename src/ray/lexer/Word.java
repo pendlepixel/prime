@@ -1,7 +1,8 @@
 package ray.lexer;
 
 /**
- * DESCRIPTION: 关键字和标识符相关处理类
+ * DESCRIPTION: 用于管理保留字、标识符和像&&这样的复合词法单元的词素
+ * 也可以用来管理在中间代码中运算符的书写形式；比如单目减号
 */
 public class Word extends Token {
 

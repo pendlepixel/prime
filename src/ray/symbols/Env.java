@@ -6,7 +6,7 @@ import ray.inter.Id;
 import ray.lexer.Token;
 
 /**
- * DESCRIPTION: 符号表相关的类
+ * DESCRIPTION: 符号表相关的类,将字符串词法单元映射为类Id的对象。
 */
 public class Env {
 
@@ -18,8 +18,8 @@ public class Env {
      * PARAM[IN]: n，这个参数n的值是一个环境，这个对象被链接到环境
      * RETURN: 
     */
-    public Env(Env n) 
-	{ 
+    public Env(Env n)
+	{
         table = new Hashtable(); 
         prev = n; 
     }
@@ -30,7 +30,7 @@ public class Env {
      * PARAM[IN]: i, 加入条目的value值
      * RETURN: void
     */
-    public void put(Token w, Id i) 
+    public void put(Token w, Id i)
 	{ 
         table.put(w, i); 
     }
@@ -40,9 +40,9 @@ public class Env {
      * PARAM[IN]: w，key值，根据此值进行搜索
      * RETURN: 搜索成功，返回一个符号表条目；搜索失败，返回null
     */
-    public Id get(Token w) 
+    public Id get(Token w)
 	{
-        for (Env e = this; e != null; e = e.prev) 
+        for (Env e = this; e != null; e = e.prev)
 		{
             Id found = (Id)(e.table.get(w));
             if (null != found)

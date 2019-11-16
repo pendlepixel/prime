@@ -32,6 +32,10 @@ import ray.symbols.Array;
 import ray.symbols.Env;
 import ray.symbols.Type;
 
+/**
+ * DESCRIPTION: 语法分析器的相关类，语法分析器读入一个由词法单元组成的流，并调用适当的inter中的构造函数，构建出一棵
+ * 抽象语法树
+*/
 public class Parser {
 
     private Lexer lex;  //这个语法分析器的词法分析器
@@ -67,17 +71,29 @@ public class Parser {
         }
     }
 
+    /**
+     * DESCRIPTION: 语法分析过程开始调用的接口，调用block()对输入流进行语法分析，并构建出抽象语法树
+     * PARAM: NULL
+     * RETURN: void
+    */
     public void program() throws IOException 
     {
+        //对输入流进行语法分析
         Stmt s = block();
+
+        //生成中间代码
         int begin = s.newlabel(); 
         int after = s.newlabel();
-        
         s.emitlabel(begin); 
         s.gen(begin, after); 
         s.emitlabel(after);
     }
     
+    /**
+     * DESCRIPTION: 对输入流进行语法分析（对符号表进行处理）
+     * PARAM: NULL
+     * RETURN: Stmt
+    */
     Stmt block() throws IOException 
     {
         match('{'); 
@@ -101,7 +117,7 @@ public class Parser {
             match(';');
             
             Id id = new Id((Word)tok, p, used);
-            top.put(tok, id);
+            top.put(tok, id);  //程序中的声明被处理为符号表中有关标识符的条目
             used = used + p.width;
         }
     }
@@ -156,6 +172,9 @@ public class Parser {
         Stmt s2;
         Stmt savedStmt;  //用于break语句保存外层的循环语句
         
+        //这个语句的每个case分支对应于非终结符号Stmt的各个产生式。每个case分支都使用inter中讨论的构造函数来建立某个构造对应的结点。
+        //当语法分析器碰到while语句和do语句的开始关键字的时候，就会创建这些语句的结点。这些结点在相应语句进行完语法分析之前就构造出来了，
+        //这可以使得任何内层的break语句回到它的外层循环语句。当出现嵌套的循环时，我们通过使用类Stmt中的变量Stmt.Enclosing和savedStmt来保存当前的外层循环。
         switch (look.tag) 
         {
             case ';':
@@ -236,6 +255,11 @@ public class Parser {
         }
     }
 
+    /**
+     * DESCRIPTION: 为方便起见，赋值语句的代码出现在一个辅助过程assign中
+     * PARAM: NULL
+     * RETURN: Stmt
+    */
     Stmt assign() throws IOException 
     {
         Stmt stmt; 
@@ -265,6 +289,7 @@ public class Parser {
         return stmt;
     }
 
+    //对算数运算和布尔运算的语法分析很相似。在每种情况下都会创建一个正确的抽象语法树结点，这两者代码的生成方式有所不同。
     Expr bool() throws IOException 
     {
         Expr x = join();
@@ -370,6 +395,11 @@ public class Parser {
         }
     }
 
+    /**
+     * DESCRIPTION: 处理表达式“因子”，辅助函数offset按照6.4.3节中讨论的方法为数组地址计算生成代码。
+     * PARAM: NULL
+     * RETURN: Expr
+    */
     Expr factor() throws IOException 
     {
         Expr x = null;
@@ -435,6 +465,11 @@ public class Parser {
         }
     }
 
+    /**
+     * DESCRIPTION: 按照6.4.3节中讨论的方法为数组地址计算生成代码。 I -> [E]|[E]I
+     * PARAM: NULL
+     * RETURN: Expr
+    */
     Access offset(Id a) throws IOException 
     {
         Expr i; 
@@ -444,6 +479,7 @@ public class Parser {
         Expr loc;  //继承id
         Type type = a.type;
         
+        //第一个下标，I->[E]
         match('['); 
         i = bool(); 
         match(']');
@@ -453,6 +489,7 @@ public class Parser {
         t1 = new Arith(new Token('*'), i, w);
         loc = t1;
         
+        //多维下标，I->[E]I
         while('[' == look.tag) 
         {
             match('['); 

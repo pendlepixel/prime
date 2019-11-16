@@ -2,6 +2,9 @@ package ray.symbols;
 
 import ray.lexer.Tag;
 
+/**
+ * DESCRIPTION: 数组类型的相关类
+*/
 public class Array extends Type {
 
     public Type of;  //数组的元素类型

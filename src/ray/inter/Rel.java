@@ -4,6 +4,9 @@ import ray.lexer.Token;
 import ray.symbols.Array;
 import ray.symbols.Type;
 
+/**
+ * DESCRIPTION: 实现运算符<,<=,==,!=,>=,>的相关类
+*/
 public class Rel extends Logical {
     
     public Rel(Token tok, Expr x1, Expr x2) 
@@ -11,6 +14,9 @@ public class Rel extends Logical {
         super(tok, x1, x2); 
     }
 
+    /**
+    * DESCRIPTION: 检查两个运算分量是否具有相同的类型，但他们不是数组，为简单起见，这里不允许类型转换
+    */
     public Type check(Type p1, Type p2) 
     {
         if (p1 instanceof Array || p2 instanceof Array ) 

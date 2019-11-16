@@ -18,11 +18,14 @@ public class Lexer {
     //words初始化
     public Lexer() 
     {
+        //选定的关键字
         reserve( new Word("if",     Tag.IF)    );
         reserve( new Word("else",   Tag.ELSE)  );
         reserve( new Word("while",  Tag.WHILE) );
         reserve( new Word("do",     Tag.DO)    );
         reserve( new Word("break",  Tag.BREAK) );
+
+        //在其他地方定义的对象的词素
         reserve( Word.True  );  
         reserve( Word.False );
         reserve( Type.Int   );  
@@ -31,6 +34,11 @@ public class Lexer {
         reserve( Type.Float );
     }
 
+    /**
+     * DESCRIPTION: 用于把下一个输入字符读入到变量peek中
+     * PARAM: NULL
+     * RETURN: void
+    */
     void readch() throws IOException 
     { 
         peek = (char)System.in.read(); 
@@ -50,13 +58,14 @@ public class Lexer {
     }
 
     /**
-     * DESCRIPTION: 函数返回一个词法单元对象
+     * DESCRIPTION: 函数返回一个词法单元对象，识别数字，标识符和保留字。函数首先略过所有的空白字符，
+     * 首先试图识别像<=这样的符合词法单元和像365,3.14这样的数字。如果不成功，它就试图读入一个字符串。
      * PARAM: NULL
      * RETURN: Token对象
     */
     public Token scan() throws IOException 
     {
-        //跳过空格，换行和制表符
+        //step1: 跳过空格，换行和制表符
         for ( ; ; readch()) 
         {
             if ((' ' == peek) || ('\t' == peek)) 
@@ -73,6 +82,7 @@ public class Lexer {
             }
         }
 
+        //step2: 试图识别像<=这样的符合词法单元
         switch(peek) 
         {
             case '&':
@@ -107,7 +117,7 @@ public class Lexer {
             }
         }
 
-        //处理数字
+        //step3: 处理数字，试图识别像365，3.14这样的数字
         if (Character.isDigit(peek)) 
         {
             int v = 0;
@@ -141,7 +151,7 @@ public class Lexer {
             return new Real(x);
         }
 
-        //分析保留字和标识符
+        //step4: 分析保留字和标识符，试图读入一个字符串
         if (Character.isLetter(peek)) 
         {
             StringBuffer b = new StringBuffer();
@@ -165,6 +175,7 @@ public class Lexer {
             return w;
         }
 
+        //step5: 最后，peek中的任意字符都被作为词法单元返回
         Token tok = new Token(peek); 
         peek = ' ';
         return tok;

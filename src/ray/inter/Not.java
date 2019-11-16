@@ -2,6 +2,9 @@ package ray.inter;
 
 import ray.lexer.Token;
 
+/**
+ * DESCRIPTION: 逻辑运算!的相关类
+*/
 public class Not extends Logical {
     
     public Not(Token tok, Expr x2) 

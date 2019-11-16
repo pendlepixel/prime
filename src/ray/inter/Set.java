@@ -2,6 +2,9 @@ package ray.inter;
 
 import ray.symbols.Type;
 
+/**
+ * DESCRIPTION: 实现了一个左部为标识符且右部为一个表达式的赋值语句的相关类
+*/
 public class Set extends Stmt {
 
     public Id id; 
@@ -34,6 +37,9 @@ public class Set extends Stmt {
         }
     }
 
+    /**
+    * DESCRIPTION: 生成一个三地址指令
+    */
     public void gen(int b, int a) 
     {
         emit(id.toString() + " = " + expr.gen().toString());

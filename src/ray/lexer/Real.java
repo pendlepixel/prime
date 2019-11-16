@@ -1,7 +1,7 @@
 package ray.lexer;
 
 /**
- * DESCRIPTION: 实数相关类
+ * DESCRIPTION: 处理浮点数相关的类
 */
 public class Real extends Token {
     

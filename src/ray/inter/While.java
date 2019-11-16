@@ -24,6 +24,10 @@ public class While extends Stmt {
         }
     }
 
+    /**
+    * DESCRIPTION: 生成三地址代码，这个函数和类If中的相应函数gen()在本质上有着相通之处。不同之处在于标号a被保存在字段after中，且stmt的代码之后紧跟着一个
+    * 目标为b的跳转指令。这个指令使得while循环进入下一次迭代
+    */
     public void gen(int b, int a) 
     {
         after = a;  //保存标号a
