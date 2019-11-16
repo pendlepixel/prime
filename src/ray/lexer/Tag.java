@@ -15,7 +15,7 @@ public class Tag {
     public final static int GE    = 263;
     public final static int ID    = 264;
     public final static int IF    = 265;
-    public final static int INDEX = 266;
+    public final static int INDEX = 266;  //数组
     public final static int LE    = 267;
     public final static int MINUS = 268;
     public final static int NE    = 269;

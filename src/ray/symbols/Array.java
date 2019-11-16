@@ -12,7 +12,7 @@ public class Array extends Type {
     
     public Array( int sz, Type p) 
     {
-        super("[]", Tag.INDEX, sz*p.width); 
+        super("[]", Tag.INDEX, sz*(p.width));  //new Word( "[]",    Tag.INDEX   )
         size = sz; 
         of = p;
     }

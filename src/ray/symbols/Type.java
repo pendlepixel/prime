@@ -10,7 +10,7 @@ import ray.lexer.Word;
 */
 public class Type extends Word {
 
-    public int width = 0;  //width用于存储分配
+    public int width = 0;  //width用于存储分配，单位是字节
     
     public Type(String s, int tag, int w )
     { 
@@ -26,7 +26,7 @@ public class Type extends Word {
     /**
      * DESCRIPTION: 判断一个类型是否是基础类型char,int,float,是，返回true,不是，返回false
      * PARAM[IN]: p, 进行判断的Type
-     * RETURN: true/false
+     * RETURN: true/false，是基础类型返回true,否则返回false
     */
     public static boolean numeric( Type p)
     {
@@ -44,7 +44,7 @@ public class Type extends Word {
      * DESCRIPTION: 在两个“数字”类型之间进行类型转换，“数字”类型包括Type.Char,Type.Int,Type.Float.
      * 当一个算数运算符应用于两个数字类型时，结果类型是这两个类型的max值。
      * PARAM: NULL
-     * RETURN: Token对象
+     * RETURN: Type类型的对象
     */
     public static Type max(Type p1, Type p2) 
     {

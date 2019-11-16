@@ -8,6 +8,11 @@ public class Word extends Token {
 
     public String lexeme = "";
     
+    /**
+    * DESCRIPTION: 符合词法单元类型的构造函数，此对象值为s，类型为tag
+    * PARAM[IN] : s, 将被作为词法单元类型的对象的lexeme值
+    * PARAM[IN] : tag, 将被作为词法单元类型的对象的tag值
+    */
     public Word(String s, int tag) 
     { 
         super(tag); 

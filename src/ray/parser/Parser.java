@@ -353,7 +353,7 @@ public class Parser {
     Expr expr() throws IOException 
     {
         Expr x = term();
-        while(('+' == look.tag) || ('-' == look.tag)) 
+        while(('+' == look.tag) || ('-' == look.tag))
         {
             Token tok = look;
             move(); 
