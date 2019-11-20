@@ -13,11 +13,11 @@ public class Or extends Logical {
     }
 
     /**
-    * @DESCRIPTION: 生成一个布尔表达式B = B1 || B2的跳转代码
+    * @DESCRIPTION: 生成一个布尔表达式B = B1 || B2的跳转代码，其中：tok相当于||，B1相当于expr1，B2相当于expr2
     */
     public void jumping(int t, int f) 
     {
-        int label = t != 0 ? t : newlabel();
+        int label = (0 != t) ? t : newlabel();
         
         expr1.jumping(label, 0);
         expr2.jumping(t, f);
