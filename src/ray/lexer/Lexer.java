@@ -35,9 +35,9 @@ public class Lexer {
     }
 
     /**
-     * DESCRIPTION: 读入一个输入字符读入到变量peek中
-     * PARAM: NULL
-     * RETURN: void
+     * @DESCRIPTION: 读入一个输入字符读入到变量peek中
+     * @PARAM: NULL
+     * @RETURN: void
     */
     void readch() throws IOException 
     { 
@@ -45,9 +45,9 @@ public class Lexer {
     }
     
     /**
-     * DESCRIPTION: 读入一个输入字符读入到变量peek中
-     * PARAM[IN]: c, 读入的一个字符
-     * RETURN: true/false
+     * @DESCRIPTION: 读入一个输入字符读入到变量peek中
+     * @PARAM[IN]: c, 读入的一个字符
+     * @RETURN: true/false
     */
     boolean readch(char c) throws IOException 
     {
@@ -63,10 +63,10 @@ public class Lexer {
     }
 
     /**
-     * DESCRIPTION: 函数返回一个词法单元对象，识别数字，标识符和保留字。函数首先略过所有的空白字符，
+     * @DESCRIPTION: 函数返回一个词法单元对象，识别数字，标识符和保留字。函数首先略过所有的空白字符，
      * 首先试图识别像<=这样的符合词法单元和像365,3.14这样的数字。如果不成功，它就试图读入一个字符串。
-     * PARAM: NULL
-     * RETURN: Token对象
+     * @PARAM: NULL
+     * @RETURN: Token对象
     */
     public Token scan() throws IOException 
     {

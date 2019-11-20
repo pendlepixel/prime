@@ -1,7 +1,7 @@
 package ray.lexer;
 
 /**
- * DESCRIPTION: 关键字类，定义了各个词法单元对应的常量,其中三个常量INDEX, MINUS, TEMP不是词法单元，它们将在抽象语法树中使用。
+ * @DESCRIPTION: 关键字类，定义了各个词法单元对应的常量,其中三个常量INDEX, MINUS, TEMP不是词法单元，它们将在抽象语法树中使用。
 */
 public class Tag {
     

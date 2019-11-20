@@ -6,12 +6,12 @@ import ray.lexer.Lexer;
 import ray.parser.Parser;
 
 /**
- * DESCRIPTION: 实现词法分析和语法分析的相关类
+ * @DESCRIPTION: 实现词法分析和语法分析的相关类
 */
 public class Main {
 
     /**
-    * DESCRIPTION: 程序的执行就是从此main()开始的
+    * @DESCRIPTION: 程序的执行就是从此main()开始的
     */
     public static void main(String[] args) throws IOException 
     {

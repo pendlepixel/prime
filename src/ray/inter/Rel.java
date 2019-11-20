@@ -5,7 +5,7 @@ import ray.symbols.Array;
 import ray.symbols.Type;
 
 /**
- * DESCRIPTION: 实现运算符<,<=,==,!=,>=,>的相关类
+ * @DESCRIPTION: 实现运算符<,<=,==,!=,>=,>的相关类
 */
 public class Rel extends Logical {
     
@@ -15,7 +15,7 @@ public class Rel extends Logical {
     }
 
     /**
-    * DESCRIPTION: 检查两个运算分量是否具有相同的类型，但他们不是数组，为简单起见，这里不允许类型转换
+    * @DESCRIPTION: 检查两个运算分量是否具有相同的类型，但他们不是数组，为简单起见，这里不允许类型转换
     */
     public Type check(Type p1, Type p2) 
     {

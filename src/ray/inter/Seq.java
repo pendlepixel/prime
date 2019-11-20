@@ -1,7 +1,7 @@
 package ray.inter;
 
 /**
- * DESCRIPTION: 实现一个语句序列的相关类
+ * @DESCRIPTION: 实现一个语句序列的相关类，此类对应于文法中的非终结符号stmts。
 */
 public class Seq extends Stmt {
     

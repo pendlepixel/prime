@@ -4,7 +4,7 @@ import ray.lexer.Tag;
 import ray.lexer.Word;
 
 /**
- * DESCRIPTION: 我们将Type定义为类Word的子类，因为像int这样的基本类型名字就是保留字，将被词法分析器从词素映射为适当的对象。
+ * @DESCRIPTION: 我们将Type定义为类Word的子类，因为像int这样的基本类型名字就是保留字，将被词法分析器从词素映射为适当的对象。
  * 对应于基本类型的对象是Type.Int, Type.Float, Type.Char, Type.Bool.这些对象从超类中继承了字段tag,相应的值被设置为Tag.BASIC，
  * 因此语法分析器以同样的方式处理了他们。
 */
@@ -24,9 +24,9 @@ public class Type extends Word {
     public static final Type Bool  = new Type( "bool",  Tag.BASIC, 1);
     
     /**
-     * DESCRIPTION: 判断一个类型是否是基础类型char,int,float,是，返回true,不是，返回false
-     * PARAM[IN]: p, 进行判断的Type
-     * RETURN: true/false，是基础类型返回true,否则返回false
+     * @DESCRIPTION: 判断一个类型是否是基础类型char,int,float,是，返回true,不是，返回false
+     * @PARAM[IN]: p, 进行判断的Type
+     * @RETURN: true/false，是基础类型返回true,否则返回false
     */
     public static boolean numeric( Type p)
     {
@@ -41,10 +41,10 @@ public class Type extends Word {
     }
 
     /**
-     * DESCRIPTION: 在两个“数字”类型之间进行类型转换，“数字”类型包括Type.Char,Type.Int,Type.Float.
+     * @DESCRIPTION: 在两个“数字”类型之间进行类型转换，“数字”类型包括Type.Char,Type.Int,Type.Float.
      * 当一个算数运算符应用于两个数字类型时，结果类型是这两个类型的max值。
-     * PARAM: NULL
-     * RETURN: Type类型的对象
+     * @PARAM: NULL
+     * @RETURN: Type类型的对象
     */
     public static Type max(Type p1, Type p2) 
     {

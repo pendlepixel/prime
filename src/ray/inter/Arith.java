@@ -4,7 +4,7 @@ import ray.lexer.Token;
 import ray.symbols.Type;
 
 /**
- * DESCRIPTION: 表示算数运算符的类
+ * @DESCRIPTION: 表示算数运算符的类
 */
 public class Arith extends Op {
     
@@ -27,7 +27,7 @@ public class Arith extends Op {
     }
 
     /**
-    * DESCRIPTION: 将表达式的子表达式规约为地址，并将表达式的运算符作用于这些地址，从而构造出一个三地址指令的右部
+    * @DESCRIPTION: 将表达式的子表达式规约为地址，并将表达式的运算符作用于这些地址，从而构造出一个三地址指令的右部
     */
     public Expr gen() 
     {

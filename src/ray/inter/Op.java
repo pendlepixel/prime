@@ -4,7 +4,7 @@ import ray.lexer.Token;
 import ray.symbols.Type;
 
 /**
- * DESCRIPTION: 表示操作符的类，这个类的子类包括：表示算数运算符的类Arith;表示单目运算符的类Unary;表示数组访问的类Access.
+ * @DESCRIPTION: 表示操作符的类，这个类的子类包括：表示算数运算符的类Arith;表示单目运算符的类Unary;表示数组访问的类Access.
 */
 public class Op extends Expr {
     
@@ -14,12 +14,12 @@ public class Op extends Expr {
     }
 
     /**
-    * DESCRIPTION: 通过gen()生成一个项，再生成一个指令把这个项赋值给一个新的临时名字，并把名字返回
+    * @DESCRIPTION: 通过gen()生成一个项，再生成一个指令把这个项赋值给一个新的临时名字，并把名字返回
     */
     public Expr reduce() 
     {
         Expr x = gen();
-        Temp t = new Temp(type);
+        Temp t = new Temp(type);  //生成一个临时变量，临时变量的类型为type，和类Op的对象一致
         
         emit(t.toString() + " = " + x.toString());
         return t;

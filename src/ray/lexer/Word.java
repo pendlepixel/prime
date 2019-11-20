@@ -1,7 +1,7 @@
 package ray.lexer;
 
 /**
- * DESCRIPTION: 用于管理保留字、标识符和像&&这样的复合词法单元的词素
+ * @DESCRIPTION: 用于管理保留字、标识符和像&&这样的复合词法单元的词素
  * 也可以用来管理在中间代码中运算符的书写形式；比如单目减号
 */
 public class Word extends Token {
@@ -9,9 +9,9 @@ public class Word extends Token {
     public String lexeme = "";
     
     /**
-    * DESCRIPTION: 符合词法单元类型的构造函数，此对象值为s，类型为tag
-    * PARAM[IN] : s, 将被作为词法单元类型的对象的lexeme值
-    * PARAM[IN] : tag, 将被作为词法单元类型的对象的tag值
+    * @DESCRIPTION: 符合词法单元类型的构造函数，此对象值为s，类型为tag
+    * @PARAM[IN] : s, 将被作为词法单元类型的对象的lexeme值
+    * @PARAM[IN] : tag, 将被作为词法单元类型的对象的tag值
     */
     public Word(String s, int tag) 
     { 

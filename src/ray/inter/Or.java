@@ -3,7 +3,7 @@ package ray.inter;
 import ray.lexer.Token;
 
 /**
- * DESCRIPTION: 逻辑运算OR的相关类
+ * @DESCRIPTION: 逻辑运算OR的相关类
 */
 public class Or extends Logical {
     
@@ -13,7 +13,7 @@ public class Or extends Logical {
     }
 
     /**
-    * DESCRIPTION: 生成一个布尔表达式B = B1 || B2的跳转代码
+    * @DESCRIPTION: 生成一个布尔表达式B = B1 || B2的跳转代码
     */
     public void jumping(int t, int f) 
     {

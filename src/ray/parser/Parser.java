@@ -33,7 +33,7 @@ import ray.symbols.Env;
 import ray.symbols.Type;
 
 /**
- * DESCRIPTION: 语法分析器的相关类，语法分析器读入一个由词法单元组成的流，并调用适当的inter中的构造函数，构建出一棵
+ * @DESCRIPTION: 语法分析器的相关类，语法分析器读入一个由词法单元组成的流，并调用适当的inter中的构造函数，构建出一棵
  * 抽象语法树
 */
 public class Parser {
@@ -72,9 +72,9 @@ public class Parser {
     }
 
     /**
-     * DESCRIPTION: 语法分析过程开始调用的接口，调用block()对输入流进行语法分析，并构建出抽象语法树
-     * PARAM: NULL
-     * RETURN: void
+     * @DESCRIPTION: 语法分析过程开始调用的接口，调用block()对输入流进行语法分析，并构建出抽象语法树
+     * @PARAM: NULL
+     * @RETURN: void
     */
     public void program() throws IOException 
     {
@@ -90,9 +90,9 @@ public class Parser {
     }
     
     /**
-     * DESCRIPTION: 对输入流进行语法分析（对符号表进行处理）
-     * PARAM: NULL
-     * RETURN: Stmt
+     * @DESCRIPTION: 对输入流进行语法分析（对符号表进行处理）
+     * @PARAM: NULL
+     * @RETURN: Stmt
     */
     Stmt block() throws IOException 
     {
@@ -256,9 +256,9 @@ public class Parser {
     }
 
     /**
-     * DESCRIPTION: 为方便起见，赋值语句的代码出现在一个辅助过程assign中
-     * PARAM: NULL
-     * RETURN: Stmt
+     * @DESCRIPTION: 为方便起见，赋值语句的代码出现在一个辅助过程assign中
+     * @PARAM: NULL
+     * @RETURN: Stmt
     */
     Stmt assign() throws IOException 
     {
@@ -396,9 +396,9 @@ public class Parser {
     }
 
     /**
-     * DESCRIPTION: 处理表达式“因子”，辅助函数offset按照6.4.3节中讨论的方法为数组地址计算生成代码。
-     * PARAM: NULL
-     * RETURN: Expr
+     * @DESCRIPTION: 处理表达式“因子”，辅助函数offset按照6.4.3节中讨论的方法为数组地址计算生成代码。
+     * @PARAM: NULL
+     * @RETURN: Expr
     */
     Expr factor() throws IOException 
     {
@@ -466,9 +466,9 @@ public class Parser {
     }
 
     /**
-     * DESCRIPTION: 按照6.4.3节中讨论的方法为数组地址计算生成代码。 I -> [E]|[E]I
-     * PARAM: NULL
-     * RETURN: Expr
+     * @DESCRIPTION: 按照6.4.3节中讨论的方法为数组地址计算生成代码。 I -> [E]|[E]I
+     * @PARAM: NULL
+     * @RETURN: Expr
     */
     Access offset(Id a) throws IOException 
     {

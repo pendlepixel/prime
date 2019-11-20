@@ -3,7 +3,7 @@ package ray.inter;
 import ray.lexer.Lexer;
 
 /**
- * DESCRIPTION: 抽象语法树的实现类
+ * @DESCRIPTION: 抽象语法树的实现类
 */
 public class Node {
     

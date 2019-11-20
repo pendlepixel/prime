@@ -1,7 +1,7 @@
 package ray.lexer;
 
 /**
- * DESCRIPTION: 做出语法分析决定相关类，表示一个词法单元
+ * @DESCRIPTION: 做出语法分析决定相关类，表示一个词法单元
 */
 public class Token {
 
