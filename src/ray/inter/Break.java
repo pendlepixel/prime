@@ -11,7 +11,7 @@ public class Break extends Stmt {
     
     public Break() 
     {
-        if (Stmt.Enclosing == Stmt.Null)  
+        if (Stmt.Enclosing == Stmt.Null)
         {
             error("unenclosed break");
         }

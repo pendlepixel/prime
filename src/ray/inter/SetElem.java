@@ -26,7 +26,8 @@ public class SetElem extends Stmt {
 
     public Type check(Type p1, Type p2) 
     {
-        if (p1 instanceof Array || p2 instanceof Array) 
+        //instanceof，用来检测一个对象是否是一个类的实例。如果p1是类Array的一个对象，那么p1 instanceof Array为true,否则为false
+        if ((p1 instanceof Array) || (p2 instanceof Array)) 
         {
             return null;
         }
@@ -34,7 +35,7 @@ public class SetElem extends Stmt {
         {
             return p2;
         }
-        else if (Type.numeric(p1) && Type.numeric(p2)) 
+        else if ((Type.numeric(p1)) && (Type.numeric(p2))) 
         {
             return p2;
         }

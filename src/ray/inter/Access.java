@@ -9,8 +9,8 @@ import ray.symbols.Type;
 */
 public class Access extends Op {
 
-    public Id array;
-    public Expr index;
+    public Id array;  //数组名称
+    public Expr index;  //数组元素格式
     
     public Access(Id a, Expr i, Type p)  //p是将数组平组化后的元素类型
 	{  
