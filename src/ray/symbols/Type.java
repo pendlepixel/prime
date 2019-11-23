@@ -6,7 +6,7 @@ import ray.lexer.Word;
 /**
  * @DESCRIPTION: 我们将Type定义为类Word的子类，因为像int这样的基本类型名字就是保留字，将被词法分析器从词素映射为适当的对象。
  * 对应于基本类型的对象是Type.Int, Type.Float, Type.Char, Type.Bool.这些对象从超类中继承了字段tag,相应的值被设置为Tag.BASIC，
- * 因此语法分析器以同样的方式处理了他们。
+ * 因此语法分析器以同样的方式处理了他们。Type就是专门处理基础类型的类
 */
 public class Type extends Word {
 

@@ -15,7 +15,9 @@ public class Lexer {
         words.put(w.lexeme, w); 
     }
 
-    //words初始化
+    /**
+     * @DESCRIPTION: 构造函数，words被初始化，填充保留字
+    */
     public Lexer() 
     {
         //选定的关键字

@@ -109,7 +109,8 @@ public class Parser {
 
     void decls() throws IOException 
     {
-        while (look.tag == Tag.BASIC)  //D->type ID;
+        //识别到是基础运算(Tag.BASIC)，所以进行逻辑运算
+        while (Tag.BASIC == look.tag)  //D->type ID;
         {
             Type p = type(); 
             Token tok = look; 
