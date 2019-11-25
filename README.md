@@ -17,4 +17,5 @@ linux
 And then, you will get the class files, these class files has been existed in this proj, you can find them on ./prime/bin/
 
 ### How to run
-
+1. cp ray/main/Main.class ./ (copy the Main.class file to src/)
+2. java ray.main.Main
