@@ -12,11 +12,4 @@ I am trying to solve the problem now.
 linux
 
 #### Steps
-1. enter to ./prime/src
-2. execute those cmd : javac ray/lexer/*.java; javac ray/symbols/*.java; javac ray/inter/*.java; javac ray/parser/*.java; javac ray/main/*.java
-
-And then, you will get the class files, these class files has been existed in this proj, you can find them on ./prime/bin/
-
-### How to run
-1. cp ray/main/Main.class ./ (copy the Main.class file to src/)
-2. java ray.main.Main
+1. make clean; make
