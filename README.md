@@ -1,15 +1,7 @@
 # prime
-code of an available compiler with Java language.
-The code now is only for a front end, the part of the back end is under development now.
+code of the dragon book, the code now is performability.
+You can see the result of converting origin code to three address mode code in prime/tmp/
 
-### Announcement
-the code now can be compiled, but can not get the right result when you run the example on the dragon book.
-I am trying to solve the problem now.
-
-
-### How to compiled
-#### Environment
-linux
-
-#### Steps
-1. make clean; make
+## How to run
+1. cd prime/
+2. make clean; make
